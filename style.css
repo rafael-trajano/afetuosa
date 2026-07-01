@@ -393,7 +393,6 @@ main {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--cor-dourado);
-    align-self: center;
 }
 
 .home-titulo {
@@ -415,7 +414,6 @@ main {
 
 .home-ctas {
     margin-top: 8px;
-    align-self: center;
 }
 
 .home-ctas .cta {
@@ -1145,7 +1143,13 @@ main {
         font-size: 2rem;
     }
 
-    
+        .home-eyebrow {
+        align-self: center;
+    }
+
+    .home-ctas {
+        align-self: center;
+    }
 
     .sobre-texto h2,
     .destilaria-header h2,
