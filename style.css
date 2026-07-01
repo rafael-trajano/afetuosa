@@ -393,6 +393,7 @@ main {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--cor-dourado);
+    align-self: center;
 }
 
 .home-titulo {
@@ -414,6 +415,7 @@ main {
 
 .home-ctas {
     margin-top: 8px;
+    align-self: center;
 }
 
 .home-ctas .cta {
@@ -429,7 +431,6 @@ main {
     border-color: var(--cor-dourado-claro);
 }
 
-/* Mesmo tamanho real (480px) da imagem da seção Sobre, em qualquer largura de tela */
 .home-foto-container {
     width: 100%;
     height: 100%;
@@ -712,8 +713,9 @@ main {
 }
 
 .produto-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(217, 181, 74, 0.35);
 }
 
 .produto-conteudo-texto {
@@ -936,8 +938,7 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 130px 80px;
-    border-top: 1px solid rgba(178, 134, 0, 0.08);
+    padding: 80px;
 }
 
 .faq-header {
@@ -1144,6 +1145,8 @@ main {
         font-size: 2rem;
     }
 
+    
+
     .sobre-texto h2,
     .destilaria-header h2,
     .produtos-header h2,
@@ -1175,9 +1178,16 @@ main {
         flex: 0 0 85%;
         align-items: center;
         text-align: center;
-        border: none;
     }
 
+    .destilaria-item.ativo {
+        border-color: rgba(217, 181, 74, 0.4);
+    }
+
+    .destilaria-item.ativo h3 {
+        color: var(--cor-dourado-claro);
+    }
+    
     .destilaria-item.animar {
         opacity: 1;
         transform: none;

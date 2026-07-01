@@ -119,9 +119,11 @@
         if (!lista || !setaNext || !setaPrev) return;
 
         const prefereReduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const INTERVALO_AUTOPLAY = 4500;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        const INTERVALO_AUTOPLAY = isMobile ? 9000 : 4500;
         let autoplayId = null;
         let emTela = false;
+        let pausadoPorClique = false;
 
         function obterLarguraScroll() {
             const primeiroItem = lista.querySelector('.destilaria-item');
@@ -157,7 +159,7 @@
         }
 
         function iniciarAutoplay() {
-            if (prefereReduzirMovimento || !emTela) return;
+            if (prefereReduzirMovimento || !emTela || pausadoPorClique) return;
             pararAutoplay();
             autoplayId = setInterval(irParaProximo, INTERVALO_AUTOPLAY);
         }
@@ -204,6 +206,34 @@
             emTela = true;
             iniciarAutoplay();
         }
+
+        if (isMobile) {
+    lista.querySelectorAll('.destilaria-item').forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const estaAtivo = item.classList.contains('ativo');
+            lista.querySelectorAll('.destilaria-item').forEach(function (outro) {
+                outro.classList.remove('ativo');
+            });
+            if (!estaAtivo) {
+                item.classList.add('ativo');
+                pausadoPorClique = true;
+                pararAutoplay();
+            } else {
+                pausadoPorClique = false;
+                iniciarAutoplay();
+            }
+        });
+    });
+
+    document.addEventListener('click', function () {
+        lista.querySelectorAll('.destilaria-item').forEach(function (outro) {
+            outro.classList.remove('ativo');
+        });
+        pausadoPorClique = false;
+        iniciarAutoplay();
+    });
+}
     }
 
     initMenu();
