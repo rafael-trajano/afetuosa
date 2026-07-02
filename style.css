@@ -1151,14 +1151,19 @@ main {
 
     .home-titulo {
         font-size: 2rem;
+        text-align: center;
     }
 
-        .home-eyebrow {
+    .home-desc{
+        text-align: center;
+    }
+
+    .home-eyebrow {
         align-self: center;
     }
 
     .home-ctas {
-        align-self: center;
+        display: none;
     }
 
     .sobre-texto h2,
@@ -1226,6 +1231,10 @@ main {
 
     .produtos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .produtos-header{
+        text-align: center;
     }
 
     .faq-header{
