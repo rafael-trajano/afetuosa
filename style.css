@@ -96,6 +96,10 @@ button {
     font-family: inherit;
 }
 
+h2 {
+    font-family: var(--fonte-display);
+}
+
 /* HEADER */
 .header {
     position: fixed;
@@ -222,8 +226,8 @@ main {
 .cta {
     display: inline-block;
     padding: 16px 32px;
-    background-color: var(--cor-dourado-claro);
-    color: var(--cor-texto-escuro);
+    background-color: var(--cor-dourado);
+    color: var(--cor-texto-claro);
     font-family: var(--fonte-ui);
     font-size: 0.8rem;
     font-weight: 500;
@@ -237,7 +241,7 @@ main {
 }
 
 .cta:hover {
-    background-color: var(--cor-dourado);
+    background-color: var(--cor-dourado-claro);
     color: var(--cor-texto-escuro);
     transform: translateY(-2px);
 }
@@ -364,6 +368,13 @@ main {
     display: block;
     width: 100%;
     font-size: 0.7rem;
+    background-color: var(--cor-dourado);
+    color: var(--cor-texto-claro);
+}
+
+.nav-cta .cta:hover {
+    background-color: var(--cor-dourado-claro);
+    color: var(--cor-texto-escuro);
 }
 
 /* HOME */
@@ -479,7 +490,6 @@ main {
 }
 
 .sobre-texto h2 {
-    font-family: var(--fonte-display);
     font-size: 2rem;
     font-weight: 400;
     color: var(--cor-texto-escuro);
@@ -522,7 +532,6 @@ main {
 }
 
 .destilaria-eyebrow {
-    font-family: var(--fonte-ui);
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -532,7 +541,6 @@ main {
 }
 
 .destilaria-header h2 {
-    font-family: var(--fonte-display);
     font-size: 2rem;
     font-weight: 400;
     color: var(--cor-texto-claro);
@@ -672,7 +680,7 @@ main {
 
 .produtos-header {
     max-width: 760px;
-    margin: 0 auto 64px;
+    margin: 0 auto 32px;
     text-align: center;
 }
 
@@ -687,7 +695,6 @@ main {
 }
 
 .produtos-header h2 {
-    font-family: var(--fonte-display);
     font-size: 2rem;
 }
 
@@ -707,7 +714,8 @@ main {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 4px 24px rgba(14, 12, 10, 0.02);
-    transition: transform var(--transition), box-shadow var(--transition);
+    border: 1px solid transparent;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .produto-item:hover {
@@ -773,6 +781,9 @@ main {
 }
 
 .visitacao-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
@@ -794,8 +805,7 @@ main {
     color: var(--cor-dourado);
 }
 
-.visitacao-texto h2 {
-    font-family: var(--fonte-display);
+.visitacao-texto h2 { 
     font-size: 2rem;
 }
 
@@ -857,8 +867,9 @@ main {
 }
 
 .localizacao-texto h2 {
-    font-family: var(--fonte-display);
     font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 12px;
 }
 
 .localizacao-texto p {
@@ -898,8 +909,8 @@ main {
 .cta-como-chegar {
     display: inline-block;
     padding: 16px 34px;
-    background-color: var(--cor-texto-escuro);
-    color: var(--cor-creme);
+    background-color: var(--cor-dourado);
+    color: var(--cor-texto-claro);
     font-family: var(--fonte-ui);
     font-size: 0.78rem;
     font-weight: 500;
@@ -911,8 +922,8 @@ main {
 }
 
 .cta-como-chegar:hover {
-    background-color: var(--cor-dourado);
-    color: var(--cor-texto-claro);
+    background-color: var(--cor-dourado-claro);
+    color: var(--cor-texto-escuro);
     transform: translateY(-2px);
 }
 
@@ -957,7 +968,6 @@ main {
 }
 
 .faq-header h2 {
-    font-family: var(--fonte-display);
     font-size: 2rem;
     font-weight: 400;
     color: var(--cor-texto-escuro);
@@ -1189,7 +1199,7 @@ main {
     }
 
     .destilaria-item.ativo h3 {
-        color: var(--cor-dourado-claro);
+        color: var(--cor-dourado);
     }
     
     .destilaria-item.animar {
@@ -1216,6 +1226,10 @@ main {
 
     .produtos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .faq-header{
+        text-align: center;
     }
 
     .faq-pergunta {
