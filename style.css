@@ -15,9 +15,9 @@ VERSÃO REFINADA (ajustes pontuais solicitados)
     --cor-dourado: #B28600;
     --cor-dourado-claro: #D9B54A;
     --cor-texto-claro: #F2EDE3;
-    --cor-texto-claro-dim: rgba(242, 237, 227, 0.65);
+    --cor-texto-claro-dim: rgba(242, 237, 227, 0.85);
     --cor-texto-escuro: #1A1612;
-    --cor-texto-escuro-dim: rgba(26, 22, 18, 0.62);
+    --cor-texto-escuro-dim: rgba(26, 22, 18, 0.85);
     --cor-branca: #FFFFFF;
 
     --cor-faq-bg-hover: #F6F3EC;
@@ -503,7 +503,6 @@ main {
     max-width: 480px;
 }
 
-/* Mesmo tamanho real (480px) da imagem da seção Home, em qualquer largura de tela */
 .sobre-foto-wrap {
     width: 100%;
     max-width: 480px;
@@ -512,7 +511,7 @@ main {
 
 .sobre-foto {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1000 / 667;
     object-fit: cover;
     border-radius: var(--radius-global);
 }
@@ -590,6 +589,7 @@ main {
     flex-direction: column;
     border: 1px solid rgba(217, 181, 74, 0.08);
     transition: transform var(--transition), border-color var(--transition);
+    cursor: pointer;
 }
 
 .destilaria-item:hover {
@@ -634,11 +634,19 @@ main {
     transition: transform 0.45s ease;
 }
 
-.destilaria-item:hover .destilaria-foto-container img {
-    transform: scale(1.03);
+.destilaria-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(217, 181, 74, 0.18);
 }
 
-/* SETAS DESTILARIA */
+.destilaria-item.ativo {
+    border-color: rgba(217, 181, 74, 0.4);
+}
+
+.destilaria-item.ativo h3 {
+    color: var(--cor-dourado);
+}
+
 .destilaria-seta {
     width: 48px;
     height: 48px;
@@ -1090,23 +1098,16 @@ main {
 /* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .home {
-        grid-template-columns: 1fr;
-        padding: 40px 32px;
-        text-align: left;
-        row-gap: 26px;
+        grid-template-columns: 1fr 360px;
+        padding-right: 48px;
     }
 
     .home-esquerda {
-        padding: 0;
-        align-items: flex-start;
+        padding: 48px 40px 48px 48px;
     }
 
     .home-titulo {
-        font-size: 2.4rem;
-    }
-
-    .home-foto-container {
-        padding: 0 0 20px 0;
+        font-size: 2.2rem;
     }
 
     .sobre,
@@ -1115,22 +1116,20 @@ main {
     .visitacao,
     .localizacao,
     .faq {
-        padding: 80px 32px;
+        padding: 100px 48px;
     }
 
-    .sobre-conteudo,
-    .visitacao-conteudo,
-    .localizacao-conteudo {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .destilaria-item {
-        flex: 0 0 calc((100% - 24px) / 2);
+    .sobre-conteudo {
+        grid-template-columns: 1fr 360px;
+        gap: 48px;
     }
 
     .produtos-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .localizacao-conteudo {
+        gap: 48px;
     }
 }
 
@@ -1205,14 +1204,6 @@ main {
         flex: 0 0 85%;
         align-items: center;
         text-align: center;
-    }
-
-    .destilaria-item.ativo {
-        border-color: rgba(217, 181, 74, 0.4);
-    }
-
-    .destilaria-item.ativo h3 {
-        color: var(--cor-dourado);
     }
     
     .destilaria-item.animar {

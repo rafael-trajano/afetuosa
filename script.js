@@ -207,7 +207,6 @@
             iniciarAutoplay();
         }
 
-        if (isMobile) {
     lista.querySelectorAll('.destilaria-item').forEach(function (item) {
         item.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -233,7 +232,6 @@
         pausadoPorClique = false;
         iniciarAutoplay();
     });
-}
     }
 
     initMenu();
