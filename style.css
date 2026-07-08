@@ -1199,6 +1199,15 @@ main {
         display: none;
     }
 
+    .sobre,
+    .destilaria,
+    .produtos,
+    .visitacao,
+    .localizacao,
+    .faq {
+        padding: 80px 32px;
+    }
+
     .sobre-texto h2,
     .destilaria-header h2,
     .produtos-header h2,
