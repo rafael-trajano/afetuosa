@@ -255,8 +255,12 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 6px;
     padding: 8px;
+}
+
+.menu-hamburguer:hover {
+    transform: translateY(-2px);
 }
 
 .menu-hamburguer:hover .hamburguer-linha {
@@ -265,8 +269,8 @@ main {
 
 .hamburguer-linha {
     display: block;
-    width: 22px;
-    height: 1px;
+    width: 25px;
+    height: 1.5px;
     background-color: var(--cor-texto-claro);
     transition: var(--transition);
 }
@@ -1154,7 +1158,29 @@ main {
     padding: 16px 24px;
     display: block;
     margin: 0 auto;
-}
+    }
+
+    .home {
+        grid-template-columns: 1fr;
+        padding: 40px 32px;
+        text-align: left;
+        row-gap: 26px;
+    }
+
+    .home-esquerda {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .home-foto-container {
+        padding: 0 0 20px 0;
+    }
+
+    .sobre-conteudo,
+    .localizacao-conteudo {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
     .home-titulo {
         font-size: 2rem;
