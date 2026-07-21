@@ -5,10 +5,9 @@
     <title>Cachaça Afetuosa | Cachaça de Alambique Produzida em Lagoa Seca - PB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Cachaça Afetuosa">
+    <meta name="theme-color" content="#1D1D1D">
     <meta name="description" content="Conheça a Cachaça Afetuosa, produzida em Lagoa Seca - PB. Uma cachaça de alambique que une tradição, excelência e inovação. Agende sua visita e conheça nossa destilaria.">
 
-    <meta name="keywords"
-        content="cachaça, cachaça de alambique, cachaça premium, cachaça paraíba, lagoa seca, destilaria, engenho, turismo rural, afetuosa">
     <meta name="robots" content="index, follow">
  
 
@@ -72,7 +71,7 @@
     </a>
     <div class="header-acoes">
         <a href="https://wa.me/558399048000" class="header-cta" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">AGENDE SUA VISITA</a>
-        <button class="menu-hamburguer" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <button class="menu-hamburguer" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
             <span class="hamburguer-linha"></span>
             <span class="hamburguer-linha"></span>
             <span class="hamburguer-linha"></span>
@@ -80,7 +79,7 @@
     </div>
 </header>
 
-<nav class="nav" aria-label="Menu principal">
+<nav class="nav" id="menu-principal" aria-label="Menu principal">
     <div class="nav-header">
         <img src="imagens/logo-afetuosa.png" alt="Cachaça Afetuosa" class="logo-oficial nav-logo">
         <button class="menu-fechar" aria-label="Fechar menu">✕</button>
@@ -88,14 +87,16 @@
     <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#destilaria">A Destilaria</a></li>
+        <li><a href="#momentos">Momentos</a></li>
         <li><a href="#produtos">Produtos</a></li>
         <li><a href="#visitacao">Visitação</a></li>
         <li><a href="#localizacao">Localização</a></li>
         <li><a href="#faq">Dúvidas Frequentes</a></li>
     </ul>
-    <div class="nav-cta">
-        <a href="https://wa.me/558399048000" class="cta" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">AGENDE SUA VISITA</a>
+    <div class="nav-social">
+        <a href="https://wa.me/558399048000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="icone icone-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/cachacaafetuosa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icone icone-instagram" aria-hidden="true"></i></a>
+        <a href="mailto:forrobodojunino@gmail.com" aria-label="Email"><i class="icone icone-envelope" aria-hidden="true"></i></a>
     </div>
 </nav>
 
@@ -128,67 +129,30 @@
             <p class="animar">É nesse cenário que nasce a Cachaça Afetuosa. Produzida em Lagoa Seca, unindo técnicas tradicionais, controle de qualidade e inovação para criar uma bebida que respeita sua origem enquanto olha para o futuro.</p>
         </div>
         <div class="sobre-foto-wrap animar">
-            <img src="imagens/engenho-horizontal.webp" alt="Foto do Engenho Afetuosa" class="sobre-foto">
+            <img src="imagens/engenho-horizontal.webp" alt="Foto do Engenho Afetuosa" class="sobre-foto" loading="lazy">
         </div>
     </div>
 </section>
 
-<section id="destilaria" class="destilaria" aria-labelledby="destilaria-titulo">
-    <div class="destilaria-header animar">
-        <p class="destilaria-eyebrow">A DESTILARIA</p>
-        <h2 id="destilaria-titulo">O Caminho da Excelência</h2>
-        <p class="destilaria-sub">Cada etapa da produção da Afetuosa carrega o cuidado, a tradição e o tempo que transformam a cachaça em uma experiência única. Conheça o caminho percorrido até chegar à sua taça.</p>
+<section id="momentos" class="momentos" aria-labelledby="momentos-titulo">
+    <div class="momentos-header animar">
+        <p class="momentos-eyebrow">MOMENTOS</p>
+        <h2 id="momentos-titulo">A Experiência Afetuosa</h2>
+        <p class="momentos-sub">Conheça um pouco dos momentos que vivemos dentro do Engenho Afetuosa.</p>
     </div>
-
-    <div class="destilaria-carrossel-wrapper">
-        <button class="destilaria-seta seta-esquerda" id="destilaria-prev" aria-label="Ver etapa anterior"></button>
-        
-        <div class="destilaria-carrossel">
-            <div class="destilaria-lista" id="destilaria-lista">
-                <div class="destilaria-item animar">
-                    <div class="destilaria-num">01</div>
-                    <h3>Seleção da Cana</h3>
-                    <p>Selecionamos canas no ponto ideal de maturação para preservar o máximo de aroma e sabor.</p>
-                    <div class="destilaria-foto-container">
-                        <img src="imagens/cana.webp" alt="imagem de canas-de-açúcar">
-                    </div>
-                </div>
-                <div class="destilaria-item animar">
-                    <div class="destilaria-num">02</div>
-                    <h3>Moagem</h3>
-                    <p>A cana é moída rapidamente para preservar seu frescor, e o caldo passa por uma filtragem.</p>
-                    <div class="destilaria-foto-container">
-                        <img src="imagens/moagem1.webp" alt="Imagem das máquinas que fazem a moagem">
-                    </div>
-                </div>
-                <div class="destilaria-item animar">
-                    <div class="destilaria-num">03</div>
-                    <h3>Fermentação</h3>
-                    <p>A fermentação acontece de forma natural, com leveduras selecionadas e controle preciso de temperatura.</p>
-                    <div class="destilaria-foto-container">
-                        <img src="imagens/fermentacao.webp" alt="Imagem de onde é feita a fermentação">
-                    </div>
-                </div>
-                <div class="destilaria-item animar">
-                    <div class="destilaria-num">04</div>
-                    <h3>Destilação</h3>
-                    <p>Em alambiques de cobre, apenas o coração da destilação é preservado, deixando a cachaça mais pura e suave.</p>
-                    <div class="destilaria-foto-container">
-                        <img src="imagens/destilacao.webp" alt="Imagem de onde acontece o processo de destilação">
-                    </div>
-                </div>
-                <div class="destilaria-item animar">
-                    <div class="destilaria-num">05</div>
-                    <h3>Envelhecimento</h3>
-                    <p>O tempo completa a obra. Em barris de madeira selecionados, a Afetuosa valoriza cada etapa da produção.</p>
-                    <div class="destilaria-foto-container">
-                        <img src="imagens/envelhecimento.webp" alt="Imagem dos barris de envelhecimento da cachaça">
-                    </div>
-                </div>
-            </div>
+    <div class="momentos-grid">
+        <div class="momentos-item animar">
+            <img src="imagens/dia03-09.webp" alt="Barris de envelhecimento da Cachaça Afetuosa" loading="lazy">
         </div>
-
-        <button class="destilaria-seta seta-direita" id="destilaria-next" aria-label="Ver próxima etapa"></button>
+        <div class="momentos-item animar">
+            <img src="imagens/degustando.webp" alt="Pessoa degustando a Cachaça Afetuosa direto da fonte" loading="lazy">
+        </div>
+        <div class="momentos-item animar">
+            <img src="imagens/familia.webp" alt="Família visitando o Engenho Afetuosa" loading="lazy">
+        </div>
+        <div class="momentos-item animar">
+            <img src="imagens/dia06-09.webp" alt="Alambiques de cobre do Engenho Afetuosa" loading="lazy">
+        </div>
     </div>
 </section>
 
@@ -196,6 +160,7 @@
     <div class="produtos-header animar">
         <p class="produtos-eyebrow">PRODUTOS</p>
         <h2 id="produtos-titulo">A Arte do Destilado</h2>
+        <p class="produtos-sub">Da garrafa clássica às edições especiais, cada rótulo da Afetuosa carrega a mesma dedicação artesanal, do alambique até a sua taça.</p>
     </div>
     <div class="produtos-grid">
         <div class="produto-item animar">
@@ -206,7 +171,7 @@
                 <div class="produto-divisor"></div>
             </div>
             <div class="produto-foto-container">
-                <img src="imagens/classica.webp" alt="Garrafa Afetuosa Carvalho Americano">
+                <img src="imagens/classica.webp" alt="Garrafa Afetuosa Carvalho Americano" loading="lazy">
             </div>
         </div>
         
@@ -218,7 +183,7 @@
                 <div class="produto-divisor"></div>
             </div>
             <div class="produto-foto-container">
-                <img src="imagens/extra-premium.webp" alt="Garrafa Afetuosa Extra Premium">
+                <img src="imagens/extra-premium.webp" alt="Garrafa Afetuosa Extra Premium" loading="lazy">
             </div>
         </div>
         
@@ -230,7 +195,7 @@
                 <div class="produto-divisor"></div>
             </div>
             <div class="produto-foto-container">
-                <img src="imagens/edições-especiais.webp" alt="Garrafas de Edições Especiais de Cacjaças Afetuosas">
+                <img src="imagens/edições-especiais.webp" alt="Garrafas de Edições Especiais de Cacjaças Afetuosas" loading="lazy">
             </div>
         </div>
     </div>
@@ -262,8 +227,8 @@
                     <p class="detalhe-info">BR-104, KM 117 • Lagoa Seca, PB</p>
                 </div>
                 <div class="detalhe-item">
-                    <span class="detalhe-label">VISITAS</span>
-                    <p class="detalhe-info">Sábado e domingo, das 13h às 17h</p>
+                    <span class="detalhe-label">LOCALIZAÇÃO</span>
+                    <p class="detalhe-info">A 6 minutos do Atacadão do Jardim Tavares</p>
                 </div>
             </div>
 
@@ -287,11 +252,10 @@
 
 <section id="faq" class="faq" aria-labelledby="faq-titulo">
     <div class="faq-header animar">
-        <p class="faq-eyebrow">AINDA TEM DÚVIDAS?</p>
-        <h2 id="faq-titulo">Dúvidas Frequentes</h2>
+        <p class="faq-eyebrow">DÚVIDAS FREQUENTES</p>
+        <h2 id="faq-titulo">Ainda tem dúvidas?</h2>
         <p class="faq-sub">Informações sobre visitação, experiências, localização e disponibilidade da Cachaça Afetuosa.</p>
     </div>
-
     <div class="faq-lista">
         <div class="faq-item animar">
             <button class="faq-pergunta" aria-expanded="false">
@@ -309,7 +273,7 @@
                 <span class="faq-icone" aria-hidden="true"></span>
             </button>
             <div class="faq-resposta">
-                <p>Sim! Recebemos visitantes sábado e domingo, das 13h às 17h, para conhecer de perto o processo de produção e a história da Afetuosa.</p>
+                <p>Sim! Recebemos visitantes, venha conhecer de perto o processo de produção e a história da Afetuosa.</p>
             </div>
         </div>
 
@@ -325,7 +289,7 @@
 
         <div class="faq-item animar">
             <button class="faq-pergunta" aria-expanded="false">
-                <span>O que posso encontrar na visita ao engenho?</span>
+                <span>O que vou conhecer ao visita ao engenho?</span>
                 <span class="faq-icone" aria-hidden="true"></span>
             </button>
             <div class="faq-resposta">
@@ -345,7 +309,7 @@
 
         <div class="faq-item animar">
             <button class="faq-pergunta" aria-expanded="false">
-                <span>O engenho recebe grupos ou experiências especiais?</span>
+                <span>O engenho recebe grupos?</span>
                 <span class="faq-icone" aria-hidden="true"></span>
             </button>
             <div class="faq-resposta">
@@ -359,9 +323,14 @@
 
 <footer class="footer">
     <div class="footer-logo-wrap">
-        <img src="imagens/logo-afetuosa-branca.png" alt="Cachaça Afetuosa" class="logo-oficial footer-logo">
+        <img src="imagens/logo-afetuosa-branca.png" alt="Cachaça Afetuosa" class="logo-oficial footer-logo" loading="lazy">
     </div>
     <div class="footer-info">
+        <div class="footer-social">
+            <a href="https://wa.me/558399048000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="icone icone-whatsapp" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/cachacaafetuosa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icone icone-instagram" aria-hidden="true"></i></a>
+            <a href="mailto:forrobodojunino@gmail.com" aria-label="Email"><i class="icone icone-envelope" aria-hidden="true"></i></a>
+        </div>
         <p>© 2026 Cachaça Afetuosa — Todos os direitos reservados</p>
         <p>E-mail: <a href="mailto:forrobodojunino@gmail.com">forrobodojunino@gmail.com</a></p>
         <p>WhatsApp: <a href="https://wa.me/558399048000" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">(83) 99048000</a></p>
