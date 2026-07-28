@@ -23,7 +23,7 @@ ARQUITETURA CSS — CACHAÇA AFETUOSA
     --cor-creme: #FAF7F2;
     --cor-creme-escuro: #F1EADC;
     --cor-dourado: #B28600;
-    --cor-dourado-claro: #D9B54A;
+    --cor-dourado-claro: #d4a928;
     --cor-texto-claro: #F2EDE3;
     --cor-texto-claro-dim: rgba(242, 237, 227, 0.85);
     --cor-texto-escuro: #1A1612;
@@ -41,7 +41,7 @@ ARQUITETURA CSS — CACHAÇA AFETUOSA
     --radius-global: 16px;
     --radius-smooth: 8px;
 
-    --shadow-sm: 0 4px 20px rgba(14, 12, 10, 0.05);
+    --shadow-sm: 0 6px 24px rgba(14, 12, 10, 0.10);
     --shadow-md: 0 10px 36px rgba(14, 12, 10, 0.24);
     --shadow-lg: 0 24px 70px rgba(14, 12, 10, 0.32);
 }
@@ -299,7 +299,6 @@ main {
 .cta-reservar:hover,
 .cta-como-chegar:hover {
     background-color: var(--cor-dourado-claro);
-    color: var(--cor-texto-escuro);
     transform: translateY(-2px);
 }
 
@@ -417,7 +416,7 @@ main {
     display: block;
     padding: 16px 18px;
     font-family: var(--fonte-ui);
-    font-size: 0.77rem;
+    font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -473,6 +472,8 @@ main {
     padding: 60px 64px 60px 80px;
 }
 
+
+
 .home-eyebrow,
 .sobre-eyebrow,
 .momentos-eyebrow,
@@ -484,11 +485,21 @@ main {
     font-weight: 500;
     letter-spacing: 0.2em;
     color: var(--cor-dourado);
+    text-transform: uppercase;
 }
 
 .home-eyebrow {
-    font-size: 0.76rem;
-    text-transform: uppercase;
+    font-size: 0.78rem;
+}
+
+.sobre-eyebrow,
+.momentos-eyebrow,
+.produtos-eyebrow,
+.visitacao-eyebrow,
+.localizacao-eyebrow,
+.faq-eyebrow {
+    font-size: 0.78rem;          
+    margin-bottom: 6px;          
 }
 
 .home-titulo {
@@ -567,10 +578,6 @@ main {
     gap: 20px;
 }
 
-.sobre-eyebrow {
-    font-size: 0.72rem;
-}
-
 .sobre-texto h2 {
     font-size: 2rem;
     font-weight: 400;
@@ -584,6 +591,11 @@ main {
     line-height: 1.85;
     max-width: 480px;
 }
+
+.sobre-eyebrow {
+    margin-bottom: -14px;   
+}
+
 
 .sobre-foto-wrap {
     width: 100%;
@@ -604,18 +616,13 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
+    padding: 80px;
 }
 
 .momentos-header {
     max-width: 760px;
     margin: 0 auto 32px;
     text-align: center;
-}
-
-.momentos-eyebrow {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    margin-bottom: 12px;
 }
 
 .momentos-header h2 {
@@ -685,7 +692,8 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 130px 80px;
+    padding: 80px 80px 40px 80px;
+    background-color: var(--cor-creme-escuro);
 }
 
 .produtos-header {
@@ -694,14 +702,9 @@ main {
     text-align: center;
 }
 
-.produtos-eyebrow {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
 .produtos-header h2 {
     font-size: 2rem;
+    font-weight: 400;
 }
 
 .produtos-sub {
@@ -713,33 +716,40 @@ main {
 }
 
 .produtos-grid {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 24px;
 }
 
 .produto-item {
     background-color: var(--cor-creme-escuro);
-    padding: 24px;
+    padding: 0px;
+    overflow: hidden;
     border-radius: var(--radius-global);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 24px rgba(14, 12, 10, 0.02);
+    box-shadow: var(--shadow-sm);
     border: 1px solid transparent;
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.produto-item:hover {
-    transform: translateY(-5px) scale(1.02);
+.produtos .produto-item:hover {
     box-shadow: var(--shadow-md);
-    border: 1px solid rgba(217, 181, 74, 0.35);
+    transform: translateY(-6px);
+}
+
+.produto-item:hover .produto-foto-container img {
+    transform: scale(1.06);            
 }
 
 .produto-conteudo-texto {
-    margin-bottom: 20px;
+    padding: 18px;                 
+    margin-bottom: 0;              
+    display: flex;
+    flex-direction: column;
 }
 
 .produto-cta{
@@ -750,7 +760,7 @@ main {
 .produto-categoria {
     display: block;
     font-family: var(--fonte-ui);
-    font-size: 0.7rem;
+    font-size: 0.62rem;
     font-weight: 500;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -760,8 +770,8 @@ main {
 
 .produto-item h3 {
     font-family: var(--fonte-elegante);
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
 }
 
 .produto-item p {
@@ -769,21 +779,54 @@ main {
     font-size: 0.85rem;
     color: var(--cor-texto-escuro-dim);
     line-height: 1.7;
+    margin-bottom: 18px;
 }
 
 .produto-foto-container {
     width: 100%;
-    aspect-ratio: 1.1 / 1;
+    aspect-ratio: 1.3 / 1;
     background-color: rgba(0,0,0,0.02);
     overflow: hidden;
     border-radius: var(--radius-smooth);
-    margin-top: auto;
+    margin-top: 0;
 }
 
 .produto-foto-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.produto-specs {
+    display: block;
+    font-family: var(--fonte-ui);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--cor-dourado);
+    margin-bottom: 8px;
+}
+
+.produto-cta-btn {         
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 14px; 
+    border-radius: var(--radius-smooth);
+    background-color: var(--cor-dourado);
+    color: var(--cor-texto-claro);
+    font-family: var(--fonte-ui);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.produto-cta-btn:hover {
+    background-color: var(--cor-dourado-claro);
 }
 
 /* Visitação */
@@ -812,12 +855,13 @@ main {
 }
 
 .visitacao-eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
 }
 
 .visitacao-texto h2 { 
     font-size: 2rem;
+    font-weight: 400;
 }
 
 .visitacao-texto p {
@@ -826,6 +870,10 @@ main {
     color: var(--cor-texto-escuro-dim);
     line-height: 1.8;
     margin-bottom: 6px;
+}
+
+.visitacao-eyebrow {
+    margin-bottom: -12px;   
 }
 
 .cta-reservar {
@@ -858,7 +906,6 @@ main {
     display: inline-block;
     font-size: 0.72rem;
     text-transform: uppercase;
-    margin-bottom: 12px;
 }
 
 .localizacao-texto h2 {
@@ -942,7 +989,6 @@ main {
     display: block;
     font-size: 0.72rem;
     text-transform: uppercase;
-    margin-bottom: 12px;
 }
 
 .faq-header h2 {
@@ -1121,12 +1167,12 @@ main {
     }
 
     .cta-como-chegar {
-    width: 100%;
-    max-width: 480px;
-    text-align: center;
-    padding: 16px 24px;
-    display: block;
-    margin: 0 auto;
+        width: 100%;
+        max-width: 480px;
+        text-align: center;
+        padding: 16px 24px;
+        display: block;
+        margin: 0 auto;
     }
 
     .home {
@@ -1225,6 +1271,11 @@ main {
 
     .produtos-header{
         text-align: center;
+    }
+
+    .produto-cta-btn {
+        background-color: var(--cor-dourado);
+        color: var(--cor-texto-claro);
     }
 
     .faq-header{
