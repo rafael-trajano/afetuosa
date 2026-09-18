@@ -172,13 +172,20 @@ main {
 /* Footer */
 
 .footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-preto);
+    color: var(--cor-texto-claro);
+    border-top: 1px solid rgba(178, 134, 0, 0.25);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1440px;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 40px 48px;
-    background-color: var(--cor-preto);
-    color: var(--cor-texto-claro);
-    border-top: 1px solid rgba(178, 134, 0, 0.25);
 }
 
 .footer-logo-wrap {
@@ -453,15 +460,23 @@ main {
 
 /* Home */
 
-.home { 
+.home {
     max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 440px;
-    padding-right: 80px;
-    align-items: center;
+    display: flex;
+    justify-content: center;
     min-height: calc(100vh - 80px);
     background-color: var(--cor-preto);
     color: var(--cor-texto-claro);
+}
+
+.home-container {
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    align-items: center;
+    gap: clamp(24px, 5vw, 90px);
+    padding-right: 80px;
 }
 
 .home-esquerda {
@@ -469,7 +484,7 @@ main {
     flex-direction: column;
     justify-content: center;
     gap: 26px;
-    padding: 60px 64px 60px 80px;
+    padding: 60px 0 60px 80px;
 }
 
 
@@ -1115,14 +1130,36 @@ main {
 
 /* 9. RESPONSIVIDADE */
 
+@media (min-width: 1440px) {
+    .home-container {
+        max-width: 1560px;
+        grid-template-columns: 1fr 520px;
+        gap: 64px;
+    }
+
+    .home-titulo {
+        font-size: 3.1rem;
+        max-width: 660px;
+    }
+
+    .home-desc {
+        font-size: 1.05rem;
+        max-width: 540px;
+    }
+
+    .home-foto-container {
+        max-width: 520px;
+    }
+}
+
 @media (max-width: 1024px) {
-    .home {
+    .home-container {
         grid-template-columns: 1fr 360px;
         padding-right: 48px;
     }
 
     .home-esquerda {
-        padding: 48px 40px 48px 48px;
+        padding: 48px 0 48px 48px;
     }
 
     .home-titulo {
@@ -1175,7 +1212,7 @@ main {
         margin: 0 auto;
     }
 
-    .home {
+    .home-container {
         grid-template-columns: 1fr;
         padding: 40px 32px;
         text-align: left;
@@ -1297,11 +1334,11 @@ main {
         margin: 0 auto;
     }
 
-    .footer {
+    .footer-container {
         grid-template-columns: 1fr;
         gap: 20px;
         text-align: center;
-        padding: 20px; 
+        padding: 20px;
     }
 
     .footer-local {
