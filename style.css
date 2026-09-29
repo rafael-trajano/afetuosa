@@ -329,8 +329,9 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     padding: 8px;
+    transition: transform 0.2s ease;
 }
 
 .menu-hamburguer:hover {
@@ -343,9 +344,13 @@ main {
 
 .hamburguer-linha {
     display: block;
-    width: 25px;
-    height: 1.5px;
-    background-color: var(--cor-texto-claro);
+    width: 28px;
+    height: 2px;
+    background-color: var(--cor-texto-claro);   /* claro, porque o header é escuro */
+    border-radius: 2px;
+    /* cada linha vira uma camada própria, que o navegador encaixa em pixels
+       inteiros da tela: as 3 ficam com a mesma espessura em qualquer zoom */
+    will-change: transform;
     transition: var(--transition);
 }
 
@@ -461,30 +466,30 @@ main {
 /* Home */
 
 .home {
-    max-width: 100%;
     display: flex;
-    justify-content: center;
-    min-height: calc(100vh - 80px);
+    /* ocupa a tela toda, descontando o header fixo de 80px */
+    min-height: calc(100vh - 80px);             /* fallback p/ navegadores antigos */
+    min-height: calc(100svh - 80px);
     background-color: var(--cor-preto);
     color: var(--cor-texto-claro);
 }
 
 .home-container {
     width: 100%;
-    max-width: 1400px;
     display: grid;
-    grid-template-columns: 1fr 440px;
+    grid-template-columns: 1.3fr 1fr;           /* texto é o protagonista */
     align-items: center;
-    gap: clamp(24px, 5vw, 90px);
-    padding-right: 80px;
+    gap: clamp(32px, 4vw, 96px);
+    padding-block: clamp(40px, 4vw, 80px);
+    /* respiro lateral fluido; em monitores ultrawide segura o conteúdo em ~2160px */
+    padding-inline: max(clamp(40px, 5vw, 120px), calc((100% - 2160px) / 2));
 }
 
 .home-esquerda {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 26px;
-    padding: 60px 0 60px 80px;
+    gap: clamp(26px, 2vw, 40px);
 }
 
 
@@ -504,7 +509,7 @@ main {
 }
 
 .home-eyebrow {
-    font-size: 0.78rem;
+    font-size: clamp(0.78rem, 0.7vw, 1.05rem);
 }
 
 .sobre-eyebrow,
@@ -519,19 +524,22 @@ main {
 
 .home-titulo {
     font-family: var(--fonte-display);
-    font-size: 2.55rem;
+    /* acompanha a largura e a altura da tela, o que for menor.
+       Mesma lógica dos outros sites, em escala ~15% menor porque a
+       Cinzel Decorative é bem mais larga que a Playfair Display */
+    font-size: clamp(2.2rem, min(3.7vw, 7.6vh), 6.4rem);
     font-weight: 400;
     line-height: 1.18;
     color: var(--cor-texto-claro);
-    max-width: 580px;
+    max-width: 11em;
 }
 
 .home-desc {
     font-family: var(--fonte-ui);
-    font-size: 0.95rem;
+    font-size: clamp(0.95rem, 1.05vw, 1.6rem);
     color: var(--cor-texto-claro-dim);
     line-height: 1.8;
-    max-width: 460px;
+    max-width: 36em;
 }
 
 .home-ctas {
@@ -539,6 +547,8 @@ main {
 }
 
 .home-ctas .cta {
+    font-size: clamp(0.8rem, 0.8vw, 1.1rem);
+    padding: clamp(16px, 1.1vw, 22px) clamp(32px, 2.2vw, 48px);
     background-color: transparent;
     color: var(--cor-texto-claro);
     border: 1px solid rgba(178, 134, 0, 0.9);
@@ -554,7 +564,9 @@ main {
 .home-foto-container {
     width: 100%;
     height: 100%;
-    max-width: 480px;
+    /* cresce com a coluna, mas nunca passa de ~60% da altura útil da tela */
+    max-width: calc((100vh - 80px) * 0.6 * 4 / 3);
+    max-width: calc((100svh - 80px) * 0.6 * 4 / 3);
     margin: 0 auto;
     padding: 32px 0;
     display: flex;
@@ -648,7 +660,7 @@ main {
 
 .momentos-sub {
     font-family: var(--fonte-ui);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: var(--cor-texto-escuro-dim);
     line-height: 1.8;
     margin-top: 8px;
@@ -724,7 +736,7 @@ main {
 
 .produtos-sub {
     font-family: var(--fonte-ui);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: var(--cor-texto-escuro-dim);
     line-height: 1.8;
     margin-top: 16px;
@@ -869,11 +881,6 @@ main {
     align-items: center;
 }
 
-.visitacao-eyebrow {
-    font-size: 0.78rem;
-    text-transform: uppercase;
-}
-
 .visitacao-texto h2 { 
     font-size: 2rem;
     font-weight: 400;
@@ -919,8 +926,6 @@ main {
 
 .localizacao-eyebrow {
     display: inline-block;
-    font-size: 0.72rem;
-    text-transform: uppercase;
 }
 
 .localizacao-texto h2 {
@@ -1002,8 +1007,6 @@ main {
 
 .faq-eyebrow {
     display: block;
-    font-size: 0.72rem;
-    text-transform: uppercase;
 }
 
 .faq-header h2 {
@@ -1015,7 +1018,7 @@ main {
 
 .faq-sub {
     font-family: var(--fonte-ui);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: var(--cor-texto-escuro-dim);
     line-height: 1.8;
     max-width: 620px;
@@ -1130,36 +1133,14 @@ main {
 
 /* 9. RESPONSIVIDADE */
 
-@media (min-width: 1440px) {
-    .home-container {
-        max-width: 1560px;
-        grid-template-columns: 1fr 520px;
-        gap: 64px;
-    }
-
-    .home-titulo {
-        font-size: 3.1rem;
-        max-width: 660px;
-    }
-
-    .home-desc {
-        font-size: 1.05rem;
-        max-width: 540px;
-    }
-
-    .home-foto-container {
-        max-width: 520px;
-    }
-}
-
 @media (max-width: 1024px) {
-    .home-container {
-        grid-template-columns: 1fr 360px;
-        padding-right: 48px;
+    .home {
+        min-height: auto;
     }
 
-    .home-esquerda {
-        padding: 48px 0 48px 48px;
+    .home-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 64px 48px;
     }
 
     .home-titulo {
@@ -1215,16 +1196,16 @@ main {
     .home-container {
         grid-template-columns: 1fr;
         padding: 40px 32px;
-        text-align: left;
+        text-align: center;
         row-gap: 26px;
     }
 
     .home-esquerda {
-        padding: 0;
-        align-items: flex-start;
+        align-items: center;            /* centraliza eyebrow, título e subtítulo */
     }
 
     .home-foto-container {
+        max-width: 480px;
         padding: 0 0 20px 0;
     }
 
@@ -1266,7 +1247,7 @@ main {
     .visitacao-texto h2,
     .localizacao-texto h2,
     .faq-header h2 {
-        font-size: 1.6rem;
+        font-size: 1.6rem;           /* Cinzel Decorative é larga: 1.6rem equivale ao 1.9rem dos outros sites */
     }
 
     .home-eyebrow,
