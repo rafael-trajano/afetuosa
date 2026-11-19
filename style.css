@@ -30,7 +30,6 @@ ARQUITETURA CSS — CACHAÇA AFETUOSA
     --cor-texto-escuro-dim: rgba(26, 22, 18, 0.85);
     --cor-branca: #FFFFFF;
 
-    --cor-faq-bg-hover: #F6F3EC;
     --cor-faq-linha: rgba(26, 22, 18, 0.12);
 
     --fonte-display: 'Cinzel Decorative', serif;
@@ -494,13 +493,7 @@ main {
 
 
 
-.home-eyebrow,
-.sobre-eyebrow,
-.momentos-eyebrow,
-.produtos-eyebrow,
-.visitacao-eyebrow,
-.localizacao-eyebrow,
-.faq-eyebrow {
+.home-eyebrow {
     font-family: var(--fonte-ui);
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -512,14 +505,9 @@ main {
     font-size: clamp(0.78rem, 0.7vw, 1.05rem);
 }
 
-.sobre-eyebrow,
-.momentos-eyebrow,
-.produtos-eyebrow,
-.visitacao-eyebrow,
-.localizacao-eyebrow,
-.faq-eyebrow {
-    font-size: 0.78rem;          
-    margin-bottom: 6px;          
+/* palavra em destaque nos títulos das seções */
+.destaque {
+    color: var(--cor-dourado);
 }
 
 .home-titulo {
@@ -619,10 +607,6 @@ main {
     max-width: 480px;
 }
 
-.sobre-eyebrow {
-    margin-bottom: -14px;   
-}
-
 
 .sobre-foto-wrap {
     width: 100%;
@@ -720,7 +704,6 @@ main {
     color: var(--cor-texto-escuro);
     max-width: 100%;
     padding: 80px 80px 40px 80px;
-    background-color: var(--cor-creme-escuro);
 }
 
 .produtos-header {
@@ -865,20 +848,31 @@ main {
     padding: 130px 80px;
 }
 
+/* desktop: o conteúdo é dividido em 65% (texto) e 35% (logo centralizada) */
 .visitacao-conteudo {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
+    grid-template-columns: 65% 35%;
+    align-items: center;
 }
 
 .visitacao-texto {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    align-items: center;
+    align-items: flex-start;
+}
+
+/* logo do Engenho Afetuosa, discreta, ao lado do texto */
+.visitacao-assinatura {
+    display: flex;
+    justify-content: center;
+}
+
+.visitacao-selo {
+    width: 140px;
+    height: auto;
 }
 
 .visitacao-texto h2 { 
@@ -892,10 +886,6 @@ main {
     color: var(--cor-texto-escuro-dim);
     line-height: 1.8;
     margin-bottom: 6px;
-}
-
-.visitacao-eyebrow {
-    margin-bottom: -12px;   
 }
 
 .cta-reservar {
@@ -919,13 +909,9 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.1fr 1.2fr;
-    gap: 80px;
+    grid-template-columns: 1.2fr 1fr;    /* texto um pouco mais largo que o mapa */
+    gap: 56px;
     align-items: center;
-}
-
-.localizacao-eyebrow {
-    display: inline-block;
 }
 
 .localizacao-texto h2 {
@@ -934,24 +920,26 @@ main {
     margin-bottom: 12px;
 }
 
-.localizacao-texto p {
+/* só o parágrafo de descrição (antes a regra pegava também os textos de endereço) */
+.localizacao-texto > p {
     font-family: var(--fonte-ui);
     font-size: 0.95rem;
     color: var(--cor-texto-escuro-dim);
     line-height: 1.8;
-    margin-bottom: 34px;
+    margin-bottom: 28px;
 }
 
 .localizacao-detalhes {
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
+    gap: 16px;
+    margin-bottom: 32px;
 }
 
 .detalhe-item {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 }
 
 .detalhe-label {
@@ -964,7 +952,8 @@ main {
 }
 
 .detalhe-info {
-    font-size: 1rem
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .cta-como-chegar {
@@ -977,7 +966,7 @@ main {
 
 .localizacao-mapa-card {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 3 / 2;
     background-color: var(--cor-preto);
     overflow: hidden;
     border-radius: var(--radius-global);
@@ -1005,10 +994,6 @@ main {
     text-align: center;
 }
 
-.faq-eyebrow {
-    display: block;
-}
-
 .faq-header h2 {
     font-size: 2rem;
     font-weight: 400;
@@ -1033,15 +1018,11 @@ main {
 
 .faq-item {
     border-bottom: 1px solid var(--cor-faq-linha);
-    transition: background-color var(--transition), border-color var(--transition);
+    transition: border-color var(--transition);
 }
 
-.faq-item:hover {
-    background-color: var(--cor-faq-bg-hover);
-}
 
 .faq-item.ativo {
-    background-color: #F7F2E8;
     border-color: rgba(178, 134, 0, 0.18);
 }
 
@@ -1241,6 +1222,26 @@ main {
         padding: 80px 32px;
     }
 
+    /* visitação no celular: logo pequena em cima, tudo centralizado */
+    .visitacao-conteudo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .visitacao-texto {
+        align-items: center;
+    }
+
+    .visitacao-assinatura {
+        order: -1;
+    }
+
+    .visitacao-selo {
+        width: 72px;
+    }
+
     .sobre-texto h2,
     .momentos-header h2,
     .produtos-header h2,
@@ -1250,13 +1251,7 @@ main {
         font-size: 1.6rem;           /* Cinzel Decorative é larga: 1.6rem equivale ao 1.9rem dos outros sites */
     }
 
-    .home-eyebrow,
-    .sobre-eyebrow,
-    .momentos-eyebrow,
-    .produtos-eyebrow,
-    .visitacao-eyebrow,
-    .localizacao-eyebrow,
-    .faq-eyebrow {
+    .home-eyebrow {
         font-size: 0.8rem;
     }
 
