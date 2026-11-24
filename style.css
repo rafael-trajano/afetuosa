@@ -36,6 +36,9 @@ ARQUITETURA CSS — CACHAÇA AFETUOSA
     --fonte-elegante: 'Cinzel', serif;
     --fonte-ui: 'Jost', Arial, sans-serif;
 
+    /* espaço vertical padrão das seções (em cima e embaixo) */
+    --espaco-secao: 72px;
+
     --transition: 0.3s ease;
     --radius-global: 16px;
     --radius-smooth: 8px;
@@ -515,7 +518,7 @@ main {
     /* acompanha a largura e a altura da tela, o que for menor.
        Mesma lógica dos outros sites, em escala ~15% menor porque a
        Cinzel Decorative é bem mais larga que a Playfair Display */
-    font-size: clamp(2.2rem, min(3.7vw, 7.6vh), 6.4rem);
+    font-size: clamp(2.2rem, min(3.35vw, 6.9vh), 5.6rem);
     font-weight: 400;
     line-height: 1.18;
     color: var(--cor-texto-claro);
@@ -575,7 +578,7 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 130px 80px;
+    padding: var(--espaco-secao) 80px;
 }
 
 .sobre-conteudo {
@@ -594,7 +597,7 @@ main {
 }
 
 .sobre-texto h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 400;
     color: var(--cor-texto-escuro);
 }
@@ -627,7 +630,7 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 80px;
+    padding: var(--espaco-secao) 80px;
 }
 
 .momentos-header {
@@ -637,7 +640,7 @@ main {
 }
 
 .momentos-header h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 400;
     color: var(--cor-texto-escuro);
 }
@@ -703,7 +706,7 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 80px 80px 40px 80px;
+    padding: var(--espaco-secao) 80px;
 }
 
 .produtos-header {
@@ -713,7 +716,7 @@ main {
 }
 
 .produtos-header h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 400;
 }
 
@@ -845,7 +848,7 @@ main {
     background-color: var(--cor-creme-escuro);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 130px 80px;
+    padding: var(--espaco-secao) 80px;
 }
 
 /* desktop: o conteúdo é dividido em 65% (texto) e 35% (logo centralizada) */
@@ -876,7 +879,7 @@ main {
 }
 
 .visitacao-texto h2 { 
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 400;
 }
 
@@ -902,7 +905,7 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 130px 80px;
+    padding: var(--espaco-secao) 80px;
 }
 
 .localizacao-conteudo {
@@ -915,7 +918,7 @@ main {
 }
 
 .localizacao-texto h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 400;
     margin-bottom: 12px;
 }
@@ -985,7 +988,7 @@ main {
     background-color: var(--cor-creme);
     color: var(--cor-texto-escuro);
     max-width: 100%;
-    padding: 80px;
+    padding: var(--espaco-secao) 80px;
 }
 
 .faq-header {
@@ -995,7 +998,7 @@ main {
 }
 
 .faq-header h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 400;
     color: var(--cor-texto-escuro);
     margin-bottom: 16px;
@@ -1115,6 +1118,10 @@ main {
 /* 9. RESPONSIVIDADE */
 
 @media (max-width: 1024px) {
+    :root {
+        --espaco-secao: 64px;
+    }
+
     .home {
         min-height: auto;
     }
@@ -1134,7 +1141,7 @@ main {
     .visitacao,
     .localizacao,
     .faq {
-        padding: 100px 48px;
+        padding: var(--espaco-secao) 48px;
     }
 
     .sobre-conteudo {
@@ -1152,6 +1159,10 @@ main {
 }
 
 @media (max-width: 768px) {
+    :root {
+        --espaco-secao: 56px;
+    }
+
     .header {
         height: 80px;
         padding: 0 16px;
@@ -1219,7 +1230,7 @@ main {
     .visitacao,
     .localizacao,
     .faq {
-        padding: 80px 32px;
+        padding: var(--espaco-secao) 32px;
     }
 
     /* visitação no celular: logo pequena em cima, tudo centralizado */
@@ -1327,4 +1338,21 @@ main {
     .footer-logo-wrap {
     justify-content: center;
 }
+}
+
+/* 10. AJUSTES DE ESPAÇAMENTO
+   Ficam no fim do arquivo para valer em todos os tamanhos de tela
+   (as media queries acima redefinem o padding das seções). */
+
+/* Sobre: a seção de cima (Home) é preta. Entre seções da mesma cor o espaço
+   visível é a soma das duas (2x); aqui o topo dobra para ficar igual. */
+.sobre {
+    padding-top: calc(var(--espaco-secao) * 2);
+}
+
+/* Visitação: fundo diferente das vizinhas, então o espaço também dobra
+   em cima e embaixo para não ficar apertada. */
+.visitacao {
+    padding-top: calc(var(--espaco-secao) * 2);
+    padding-bottom: calc(var(--espaco-secao) * 2);
 }
